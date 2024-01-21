@@ -9,6 +9,9 @@ To make this, i took reference here:
  (mostly i just decomposed the code separating it 
  into functions to make it more readable, 
  and added my own things as well)
+
+ to see a better version of this code, go to see my other example: 
+ https://github.com/BIGPOLLOWO/pygame-ce-collection/blob/main/emulating-physics/balls_and_lines.py 
  
 """
 
