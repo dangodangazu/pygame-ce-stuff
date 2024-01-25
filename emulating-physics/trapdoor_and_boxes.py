@@ -1,3 +1,6 @@
+
+# https://github.com/BIGPOLLOWO/pygame-ce-collection
+
 import pygame, pymunk
 from pygame.locals import *
 from random import randint, choice
