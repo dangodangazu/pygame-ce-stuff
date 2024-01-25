@@ -1,3 +1,5 @@
+# basic example of how to detect mouse clicks
+
 import pygame 
 from pygame.locals import MOUSEBUTTONDOWN, QUIT
 
@@ -8,13 +10,13 @@ screen_rect = screen.get_rect() #get your window rectangle
 font = pygame.font.Font(None, 50) # define your font
 font_surf=font.render('CLICK ME!!', True, 'orange','black') #render the text you want to display
 
-font_rect = font_surf.get_rect() #gets the font_surf rectangle
+font_rect = font_surf.get_rect() #gets the font_surf rectangle, we need this so we can check clicks later
 font_rect.center = screen_rect.center #sets the center of your font_surf, to the center of your pygame window
 
 screen.fill('white') # fills the screen in a white color
 
 screen.blit(font_surf, font_rect) #blits your text on screen
-pygame.display.flip() #updates the screen just once
+pygame.display.flip() #updates the screen just once, in programs where you want things to move, call this inside your while loop instead
 
 running = True
 while running: 
