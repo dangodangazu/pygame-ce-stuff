@@ -13,7 +13,7 @@ font_surf=font.render('CLICK ME!!', True, 'orange','black') #render the text you
 font_rect = font_surf.get_rect() #gets the font_surf rectangle, we need this so we can check clicks later
 font_rect.center = screen_rect.center #sets the center of your font_surf, to the center of your pygame window
 
-screen.fill('white') # fills the screen in a white color
+screen.fill('white') # fills the window in a white color
 
 screen.blit(font_surf, font_rect) #blits your text on screen
 pygame.display.flip() #updates the screen just once, in programs where you want things to move, call this inside your while loop instead
@@ -26,9 +26,8 @@ while running:
       print('Bye!')
       
     if event.type == MOUSEBUTTONDOWN: # this is the event we have to check for mouse clicks
-      if font_rect.collidepoint(event.pos): # check if your mouse pos is inside of the area of your font_rect
+      if font_rect.collidepoint(event.pos): # check if your mouse pos is inside of the area of your font_rect (i think)
         if event.button == 1: # check if left click was pressed (1 is left click, 2 is scroll button, 3 is right click)
           print('you clicked me ♥')
       else:
-        print("you didn't click me :c") # if the mouse position was not inside of the area of your font rect when you 
-                                          # pressed, then it will print: you didn't click me :c
+        print("you didn't click me :c")
