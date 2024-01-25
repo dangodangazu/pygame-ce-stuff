@@ -1,5 +1,7 @@
+# this is an example in how to display some text on your pygame program
+
 import pygame
-from pygame.locals import *
+from pygame.locals import QUIT, MOUSEMOTION
 
 pygame.init()
 
@@ -11,6 +13,8 @@ screen = pygame.display.set_mode((width, height))
 font = pygame.font.SysFont('Console',36) # or use a SysFont instead (Arial, Times New Roman, Century, Console, etc)
 
 text = font.render('Hello World', True, 'red') #rendering the text we want
+
+text_rect = text.get_rect()
 
 # setting a transparency, the lower the value is the more transparent, max value you can pass is 255, but 255 just means
 # it does not have transparency at all, modifying this value too low, sometimes make fonts look weird  
@@ -25,8 +29,9 @@ while running:
 
     # filling the screen in a black color
     screen.fill('black')
-    if event.type == pygame.MOUSEMOTION:
-        screen.blit(text, event.pos)
+    if event.type == MOUSEMOTION:
+        text_rect.center = event.pos #sets the center of yout text to the postion of your mouse pos
+        screen.blit(text, text_rect)
     screen.blit(text, (width // 2 - text.get_width() // 2, height // 2 - text.get_height() // 2)) #blitting the text on the center of the screen
     screen.blit(text, (width // 2 - text.get_width() // 2+2, height // 2 - text.get_height() // 2+2)) #blitting again in almost the same position to get a "3d effect"
     pygame.display.flip()
