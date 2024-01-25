@@ -458,6 +458,6 @@ class Space:
 
 
 if __name__ == '__main__':
-   game = Game(1)
+   game = Game(1, caption='Trapdoor and boxes')
    game.run()
 
