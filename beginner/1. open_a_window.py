@@ -8,10 +8,14 @@ pygame.display.set_caption('Opening a pygame window') # give your program a titl
 running = True
 
 while running:
+  # This for loop and pygame method, will help you to check for events, suchs as:
+  #   keyborad inputs 
+  #   mouse inputs 
+  #   window events
   for event in pygame.event.get():
-    if event.type == pygame.QUIT: # This, constantly checks if you click on [x] (topright of your pygame window)
+    if event.type == pygame.QUIT: # This, constantly checks if you click on [x] icon (topright of your pygame window)
       pygame.quit()               # if you did, quits pygame, and running will be False.
-      running = False             # This enables the user to close the window.
+      running = False             # This simply enables the user to close the window.
 
 
 """ 
