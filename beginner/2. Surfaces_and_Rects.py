@@ -1,7 +1,7 @@
 # This is a script that explains some very basic things about surfaces and rects, and more.
 # I recommend you to run this script, and then to place your window to the side, or minimize it, 
-# and that way you can read the code and take a look at the program, that way it will be easier 
-# to relate what is in the code, with the looks of the program.
+# and that way you can read the code and take a look at the program, and therefore, it will be easier 
+# to relate the code, with the looks of the program.
 
 # Once you fully analized a section, you can close the window, 
 # that will take you to the next section and another window will open.
