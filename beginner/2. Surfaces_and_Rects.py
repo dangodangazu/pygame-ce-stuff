@@ -1,5 +1,5 @@
-# This is a script that explains some very basic things about surfaces and rects, and more.
-# I recommend you to run this script, and then to place your window to the side, or minimize it, 
+# This code explains some very basic things about surfaces and rects, and more.
+# I recommend you to run this script, and then to place your pygame window to the side, or minimize it, 
 # and that way you can read the code and take a look at the program, and therefore, it will be easier 
 # to relate the code, with the looks of the program.
 
