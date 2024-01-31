@@ -66,7 +66,7 @@ if section1:
 
 
   # This is how you create a surface
-  surf = pygame.Surface((40,40))  # -> <Surface(40x40x8)>
+  surf = pygame.Surface((40,40))  # -> <Surface(40x40x32)>
 
   # This is how you load a surface (use convert or convert alpha)
   try:
