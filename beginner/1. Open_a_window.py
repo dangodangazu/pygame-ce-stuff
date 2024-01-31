@@ -14,9 +14,9 @@ while running:
   #   window events
   for event in pygame.event.get():
     if event.type == pygame.QUIT: # This, constantly checks if you click on [x] icon (topright of your pygame window)
-      pygame.quit()               # if you did, quits pygame, and running will be False.
-      running = False             # This simply enables the user to close the window.
-
+      running = False             # if you did, quits pygame, and running will be False.
+pygame.quit()                     # This simply enables the user to close the window.
+                                  
 
 """ 
 # this is another common way to setup your program
