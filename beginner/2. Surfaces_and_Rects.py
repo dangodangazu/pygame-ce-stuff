@@ -61,7 +61,7 @@ if section1:
   #           -Useful for collision detection.
   
   
-  # Surfaces containt everything you need to display an image.
+  # Surfaces contain everything you need to display an image.
   # Rectangles primarily stores those surface coordinates.
 
 
