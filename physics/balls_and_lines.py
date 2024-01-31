@@ -19,10 +19,6 @@ To make this, i took reference here:
 #  pip install pygame-ce
 
 
-# psd: sorry for dropping all of this in one file, well, this kind of template is more intended to use like something
-# similiar to this video: https://www.youtube.com/watch?v=b_DkQrJxpck&t=429s
-# but i want my examples to be easy to execute, so you can just copy paste them and see what is happening.
-
 
 import pygame, pymunk
 from pygame.locals import *
