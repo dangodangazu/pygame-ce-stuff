@@ -58,7 +58,7 @@ if section1:
   #           -It stores rectangular coordinates.
   #           -Helps to place a Surface easily in the right spot.
   #           -Use rectangles for moving surfaces.
-  #
+  #           -Useful for collision detection.
   
   
   # Surfaces containts everything you need to display an image
