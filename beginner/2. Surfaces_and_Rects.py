@@ -279,6 +279,7 @@ if section3:
   s7_rect = s7.get_rect(topleft= s6_rect.center)
 
   # try to create more surfaces yourself ‼
+  # (remember that after creating a surface you need to blit them inside your while loop)
   # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
 
