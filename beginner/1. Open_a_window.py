@@ -13,9 +13,9 @@ while running:
   #   mouse inputs 
   #   window events
   for event in pygame.event.get():
-    if event.type == pygame.QUIT: # This, constantly checks if you click on [x] icon (topright of your pygame window).
+    if event.type == pygame.QUIT: # This, constantly checks if you click on [x] icon (topright of your pygame window)
       running = False             # if you did, quits pygame, and running will be False.
-   screen.fill('white')           # fills the screen in a white color.
-   pygame.display.flip()          # updates the screen so we can see the changes when we changed our screen color.
-  clock.tick(60)/1000             # limits fps to 60.  
+  screen.fill('white')            # Fills the screen in a white color.
+  pygame.display.flip()           # Updates the screen so we can see the changes when we changed our screen color.
+  clock.tick(60)/1000             # Limits fps to 60.  
 pygame.quit() 
