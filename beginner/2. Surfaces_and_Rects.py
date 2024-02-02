@@ -127,7 +127,7 @@ if section2:
 
   # let's create a surface of (x=10px, y=10px)
   area_of_hundred_px = pygame.Surface((10,10), depth=8)
-  # and a surfaces of (x=1,y=1)
+  # and a surface of (x=1,y=1)
   surface_of_one_px = pygame.Surface((1,1), depth=8)
   # getting their rects
   r_h = area_of_hundred_px.get_rect()
@@ -191,7 +191,7 @@ if section2:
                                                 # of your red rectangle.
     #print(r_h)
     #print(r_o) 
-    screen.blit(area_of_hundred_px, r_h) # we blit our red surface, what contains another surface inside
+    screen.blit(area_of_hundred_px, r_h) # we blit our red surface, that contains another surface inside
     screen.blit(text, text_rect)
     clock.tick(30)
     pygame.display.flip()
