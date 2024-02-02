@@ -6,7 +6,7 @@ pygame.init()
 screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption('card animation')
 clock = pygame.time.Clock()
-font = pygame.font.SysFont('Century Gothic',20)
+font = pygame.font.SysFont('Century Gothic',30)
 
 # Creating the symbols and colors for our cards
 texts = [
