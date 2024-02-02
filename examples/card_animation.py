@@ -7,6 +7,8 @@ screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption('card animation')
 clock = pygame.time.Clock()
 font = pygame.font.SysFont('Century Gothic',30)
+t = font.render('Press left key', False, 'white')
+trect = t.get_rect(center = (400,200))
 
 # Creating the symbols and colors for our cards
 texts = [
@@ -57,6 +59,10 @@ while running:
       if event.key == pygame.K_ESCAPE:
         running = False
       if event.key == pygame.K_LEFT:
+        try:
+          del t, trect
+        except:
+          ...
         bg = screen.get_at((0,0))
         if texts:
           s, r = create_card()
@@ -65,6 +71,8 @@ while running:
       pygame.event.set_blocked(pygame.KEYDOWN) # blocks keydown 
       r = move_card_to_the_left(r, 340)        # to avoid K_LEFT spam
       if r.x == 0: pygame.event.set_allowed(pygame.KEYDOWN)
+  if not s:
+    screen.blit(t, trect)
   if s:
     screen.blit(s, r)
   pygame.display.flip()
