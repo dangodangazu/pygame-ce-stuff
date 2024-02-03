@@ -52,6 +52,7 @@ if section1:
   #           -Surfaces are a rectangular area of pixels.
   #           -Surfaces can be created or loaded.
   #           -You will need Surfaces to display images.
+  #           -You can draw surfaces onto another surface
   #     
   #     
   #         Rects:
