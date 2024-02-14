@@ -1,12 +1,6 @@
 # To make this, i took reference here:
 # https://github.com/pygame/pygame/blob/main/examples/aacircle.py
 
-"""
-  ╔═════════════════════════════════════════════════════════════════════════════════════════╗
-  ║            The purpose of this file is purely for educational purposes.                 ║
-  ╠═════════════════════════════════════════════════════════════════════════════════════════╣
-
-"""
 
 import pygame
 import pygame.gfxdraw
