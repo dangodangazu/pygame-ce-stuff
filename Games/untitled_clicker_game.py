@@ -1,7 +1,11 @@
 
 
+
 # https://github.com/BIGPOLLOWO/pygame-ce-collection
 
+
+
+# OPTIONS
 
 FULLSCREEN = True
 
@@ -14,12 +18,14 @@ SCREEN_W, SCREEN_H = 1200, 600 # this will be your size if FULLSCREEN is False
 FONT = 'centurygothic'
 
 
+# CODE
+
 import pygame as pg
 import sys
 from time import sleep
 from random import randint, choice
 
-# a single class that contains all the game logic
+# a single class that contains everything
 class UntitledClickerGame:
   def __init__(self, fullscreen:bool, screen_w=None, screen_h=None) -> None:
     pg.display.init()
@@ -216,8 +222,8 @@ class UntitledClickerGame:
 
     pg.event.clear()
     while running:
-      dt = clock.tick(60) / 1000
-      fps = clock.get_fps()
+      dt = clock.tick(80) / 1000
+      fps = int(clock.get_fps())
       for event in pg.event.get([pg.KEYDOWN, pg.MOUSEBUTTONDOWN, pg.QUIT, ONE_SECOND, GOTAPOINT]):
         if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
           running = False
@@ -254,7 +260,7 @@ class UntitledClickerGame:
         self.screen.blit(stuff['text'], stuff['tr'])
       self.debug(f'Time: {self.counter}')
       # uncomment this to see fps
-      #self.debug(f'FPS: {fps}',y=35)
+      self.debug(f'FPS: {fps}',y=35)
       if r:
         self.screen.blit(txt,r)
       pg.display.flip()
@@ -352,7 +358,7 @@ class UntitledClickerGame:
      self.final_loop()
 
 
-  def again(self):
+  def run_again(self):
      # reset variables
      self.stuff = {}
      self.ran = 300
@@ -373,9 +379,9 @@ class UntitledClickerGame:
 if __name__ == '__main__':
    game = UntitledClickerGame(FULLSCREEN, SCREEN_W, SCREEN_H)
    game.run()
-   # making a try again functionality
+   # try again functionality
    while game.try_again:
-      game.again()
+      game.run_again()
    # quiting everything
    pg.display.quit()
    pg.font.quit()
