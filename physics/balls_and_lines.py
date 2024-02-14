@@ -1,24 +1,9 @@
 """
 
-Me: https://github.com/BIGPOLLOWO/pygame-ce-collection
-
-
 To make this, i took reference here:
  https://github.com/viblo/pymunk/blob/master/pymunk/examples/balls_and_lines.py
-
  
 """
-
-
-# THIS EXAMPLE REQUIRES PYMUNK AND PYGAME-CE
-
-#if you do not have pymunk or pygame-ce already installed
-
-# GO TO THE TERMINAL AND TYPE  
-#  pip install pymunk
-#  pip install pygame-ce
-
-
 
 import pygame, pymunk
 from pygame.locals import *
