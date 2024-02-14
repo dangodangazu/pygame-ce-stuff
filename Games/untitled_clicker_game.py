@@ -1,16 +1,7 @@
-# ════════════════════════════════════════════════════════════════════════════════╗
-#
-#
-#                                       Me: ↓
-#
-#   https://github.com/BIGPOLLOWO/pygame-ce-collection/blob/main/Games/untitled_clicker_game.py
-# 
-#                                                                                 
-#                                ╔═════════════════════╗
-#                                ║       OPTIONS       ║
-#                                ╚═════════════════════╝
 
-# Try to run the game in fullscreen?: ↓
+
+# https://github.com/BIGPOLLOWO/pygame-ce-collection
+
 
 FULLSCREEN = True
 
