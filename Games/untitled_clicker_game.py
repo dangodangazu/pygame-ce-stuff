@@ -13,7 +13,6 @@ SCREEN_W, SCREEN_H = 1200, 600 # this will be your size if FULLSCREEN is False
 
 FONT = 'centurygothic'
 
-# ════════════════════════════════════════════════════════════════════════════════╝
 
 import pygame as pg
 import sys
