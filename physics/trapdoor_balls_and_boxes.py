@@ -1,6 +1,7 @@
 
 # https://github.com/BIGPOLLOWO/pygame-ce-collection
 
+
 import pygame, pymunk
 from pygame.locals import *
 from random import randint, choice
@@ -23,9 +24,9 @@ class Window:
       self.screen_w = screen_w
       self.screen_h = screen_h
 
-
-    self.screen = pygame.display.set_mode((self.screen_w, self.screen_h)) #Es el resultado final de las medidas de pantalla
-    self.screen_rect = self.screen.get_rect() #OBTENER EL RECT DE NUESTRA PANTALLA FINAL
+    #Es el resultado final de las  medidas de pantalla
+    self.screen = pygame.display.set_mode((self.screen_w, self.screen_h), vsync=True)
+    self.screen_rect = self.screen.get_rect()
     
     pygame.display.set_caption(caption) #Se pone una caption para la ventana de pygame
 
@@ -73,8 +74,6 @@ class Event_handler: #NEVER USE THIS WAY OF HANDLING EVENTS MAYBE
         sys_exit()
 
 
-
-
 class Game:
     def __init__(self, fullscreen=False, screen_w=500, screen_h=500, fps_limit=60, caption='physics example #2') -> None:
       pygame.init()
@@ -90,11 +89,11 @@ class Game:
 
     def render(self):
        self.state_stack[-1].render()
-
+       pygame.display.flip()
+       
 
     def update(self):
        self.state_stack[-1].update()
-       pygame.display.flip()
 
 
     def run(self):
@@ -108,7 +107,6 @@ class Game:
 
 class Space:
     def __init__(self, game) -> None:
-#        super().__init__(game)
         self.game = game
         self.event_handler = Event_handler('x','z','q','SPACE','ESCAPE','LEFT', 'RIGHT', 'UP', 'DOWN','1','2', '3')
         self.actions = self.event_handler.actions
@@ -143,7 +141,8 @@ class Space:
 
         self.color_list = []
         self.color_list = [(249,200,200,180), (255,255,255)] # opcion de color 1
-        self.color_list = [(249,200,200,180), (255,255,255)] #opcion de color 2
+        self.color_list = [(220,77,79), (77,22,80)]
+        self.color_list = [(35,4,80), (35,32,80), (35,52,80), (35,131,80),(35,165,180),(35,202,80)]
         #self.color_list = [(randint(0,255),randint(0,255),randint(0,255)), 
         #                  (randint(0,255),randint(0,255),randint(0,255))] #opcion de color 3
 
@@ -155,7 +154,6 @@ class Space:
         self.c = 0
         
 
-
     def create_instructions(self): #yes, i didn't write a foor loop
         f = pygame.font.SysFont('Arial', 15)
         self.text = f.render('Press arrow keys to change gravity, x for 0 gravity', True, 'white','black')
@@ -165,6 +163,7 @@ class Space:
         self.text6 = f.render('Press 1 | 2 | 3 to change display mode', True, 'white','black')
         self.text5 = f.render('Press escape to exit', True, 'white','black')
 
+  
     def debug(self, info, x=10, y=10):
       debug_surf = self.f.render(str(info),True, "white")
       debug_rect = debug_surf.get_rect(topleft = (x,y))
@@ -173,7 +172,6 @@ class Space:
 
     def render_instructions(self):
       if self.display_instructions:
-        
         self.screen.blit(self.text,(0,0))
         self.screen.blit(self.text2, (0,15))
         self.screen.blit(self.text3, (0,30))
@@ -186,7 +184,6 @@ class Space:
         self.debug(f'FPS: {int(self.game.clock.get_fps())}',self.game.screen_rect.x, self.game.screen_rect.h-45)
         self.debug(f'SHAPES: {self.circle_counter}', self.game.screen_rect.x, self.game.screen_rect.h-30)
         self.debug(f'GRAVITY: {int(self.space.gravity[0]),int(self.space.gravity[1])}', self.game.screen_rect.x, self.game.screen_rect.h-15)
-
 
 
     def flipy(self,y): #INVERTS Y AXIS
@@ -282,7 +279,6 @@ class Space:
        self.create_line((pos[0], pos[1]+height), (pos[0]+width, pos[1]+height), key, color)
        
                   
-
     def draw_line(self):
       if self.segments['lines']:
         for line in self.segments['lines']:
@@ -315,39 +311,32 @@ class Space:
                       self.create_circle((self.mx, self.my), randint(1,5))
    
     
-
     def inputs(self):
-        #cheking if mousebutton down and key z
+        # cheking if mousebutton down and key z
         self.append_circle()
-        #keys down, up, left and right changes the gravity
+        # keys down, up, left and right changes the gravity
         if self.actions['DOWN']:
             self.down_counter-=0.1
             wind, grav = self.space.gravity[0], self.space.gravity[1]
             grav+= self.down_counter
             self.space._set_gravity((wind, grav))
-            #self.debug(f'GRAVITY: {int(self.space.gravity[0]),int(self.space.gravity[1])}', self.game.screen_rect.x, self.game.screen_rect.h-15)
         elif self.actions['UP']:
             self.up_counter+=0.1
             wind, grav = self.space.gravity[0], self.space.gravity[1]
             grav+= self.up_counter
             self.space._set_gravity((wind, grav))
-            #self.debug(f'GRAVITY: {int(self.space.gravity[0]),int(self.space.gravity[1])}', self.game.screen_rect.x, self.game.screen_rect.h-15)
         elif self.actions['LEFT']:
             self.left_counter -= 0.1
             wind, grav = self.space.gravity[0], self.space.gravity[1]
             wind += self.left_counter           
-            self.space._set_gravity((wind, grav))
-            #self.debug(f'GRAVITY: {int(self.space.gravity[0]),int(self.space.gravity[1])}', self.game.screen_rect.x, self.game.screen_rect.h-15)     
+            self.space._set_gravity((wind, grav))  
         elif self.actions['RIGHT']:
             self.right_counter += 0.1
             wind, grav = self.space.gravity[0], self.space.gravity[1]
             wind += self.right_counter           
-            self.space._set_gravity((wind, grav))
-            #self.debug(f'GRAVITY: {int(self.space.gravity[0]),int(self.space.gravity[1])}', self.game.screen_rect.x, self.game.screen_rect.h-15)
-        #key x set the gravity to (0,0)
+        # set the gravity to (0,0)
         elif self.actions['x']:
             self.space._set_gravity((0,0))
-            #self.debug(f'GRAVITY: {int(self.space.gravity[0]),int(self.space.gravity[1])}', self.game.screen_rect.x, self.game.screen_rect.h-15)     
         elif self.actions['ESCAPE']:
             self.event_handler.quit_game()
         elif self.actions_once['SPACE']:
@@ -356,15 +345,14 @@ class Space:
                self.close_gates()
              else:
                self.open_gates()
-             #print(f'Directions: {len(self.gates_directions)}')
-             #print(f'Gates; {len(self.segments["gates"])}')
+        # display modes
         elif self.actions['1']:
            self.display_mode = 1
         elif self.actions['2']:
            self.display_mode = 2
         elif self.actions['3']:
            self.display_mode = 3
-        
+        # controls
         if self.actions['q']:
            self.c = 500
            self.display_instructions = True
@@ -437,7 +425,6 @@ class Space:
         for event in pygame.event.get():
            self.event_handler.handle_events(event)
         self.inputs()    
-        self.space.step(self.game.dt)
         self.c+=1
 
 
@@ -445,6 +432,7 @@ class Space:
         self.game.screen.fill((120,100,100))
         self.draw_line()
         self.draw_gates()
+        self.space.step(self.game.dt)
         self.draw_circles()
         self.render_instructions()
         self.render_debug()
@@ -454,10 +442,6 @@ class Space:
            self.c = 500
 
 
-           
-
-
 if __name__ == '__main__':
-   game = Game(1, caption='Trapdoor and boxes')
+   game = Game(1, caption='Trapdoor and boxes', fps_limit=100)
    game.run()
-
