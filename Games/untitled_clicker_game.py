@@ -382,6 +382,6 @@ if __name__ == '__main__':
    # try again functionality
    while game.try_again:
       game.run_again()
-   # quiting everything
+   # quit everything
    pg.display.quit()
    pg.font.quit()
