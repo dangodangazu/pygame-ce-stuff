@@ -22,7 +22,7 @@ while running:
     b = int(sin(t * 0.1 + 2 * t * 0.3) * 127 + 128)
 
     # Draw
-    screen.fill('grey4')  # Clear the screen
+    screen.fill('grey4')
     pg.draw.circle(screen, (r, g, b), (width // 2, height // 2), 200)
     pg.display.flip()
 
