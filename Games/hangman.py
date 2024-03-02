@@ -20,6 +20,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# This is a hangman game that gets a word from the website:
+# 'https://en.wikipedia.org/wiki/Cat'
+# you can place any other website you want 
+# and the program will attempt to return 
+# all words from that website.
+
 import pygame as pg
 import requests
 import re
