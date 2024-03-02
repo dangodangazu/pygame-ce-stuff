@@ -26,6 +26,15 @@
 # and the program will attempt to return 
 # all words from that website.
 
+# Note: There are still things to polish
+# like drawing the letters that the user
+# already tried to guess in the game,
+# maybe add one extra life for the 
+# stickman because the game is a bit 
+# complicated right now, and make
+# better graphics, maybe some day
+# i will comeback and add more stuff.
+
 import pygame as pg
 import requests
 import re
