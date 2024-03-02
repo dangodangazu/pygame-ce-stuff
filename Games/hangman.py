@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# This is a hangman game that gets a word from the website:
+# This is a Hangman game that gets a word from the website:
 # 'https://en.wikipedia.org/wiki/Cat'
 # you can place any other website you want 
 # and the program will attempt to return 
@@ -203,7 +203,7 @@ class Hangman:
         2. Check if the website: "{self.url or 'None'}" exist and if it is not down.
         3. Try again\033[0m""")
 
-    # code formating of github somehow broke... oh well
+
     def ftxt(self, text:str, key='topleft', ref='self.screen_.topleft', color=FONTCOLOR, underlined=False, wrap=None, alpha=255, bgcolor=None, mini=False): 
         """
         Fast Text:
