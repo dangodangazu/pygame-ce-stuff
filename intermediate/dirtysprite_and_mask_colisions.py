@@ -14,8 +14,8 @@ bg.fill("burlywood")
 clock = pg.time.Clock()
 running = True
 
-path = "assets/img/gato.png"
-name = "gato"
+path = "image path here"
+name = "image name here"
 amount = 25
 sprites = pg.sprite.LayeredDirty()
 SPD = {}
